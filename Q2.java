@@ -1,6 +1,8 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class Q2 {
@@ -23,7 +25,8 @@ public class Q2 {
         }
 
         boolean f = false;
-        ArrayList<Integer> keys = new ArrayList<Integer>(integral.keySet());
+        List<Integer> keys = new ArrayList<>(integral.keySet());
+        Collections.sort(keys);
         for(int i = keys.size() - 1; i >= 0; i--){
             printExpression(integral.get(keys.get(i)), keys.get(i), f);
             f = true;
@@ -79,14 +82,14 @@ public class Q2 {
         if (z == -1) {
             System.out.print('-');
         }
-        if (z != 1 && z != -1) {
+        if (Math.abs(z) != 1) {
             final String pattern = "#.##";
             DecimalFormat df = new DecimalFormat(pattern);
             System.out.print(df.format(z));
         }
         if (power == 0) return;
         System.out.print('x');
-        if (power > 1) {
+        if (power != 1) {
             System.out.print("^" + power);
         }
     }
