@@ -1,3 +1,4 @@
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,6 +86,7 @@ public class Q2 {
         if (Math.abs(z) != 1) {
             final String pattern = "#.##";
             DecimalFormat df = new DecimalFormat(pattern);
+            df.setRoundingMode(RoundingMode.DOWN);
             System.out.print(df.format(z));
         }
         if (power == 0) return;
