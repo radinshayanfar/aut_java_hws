@@ -16,7 +16,7 @@ public class VendingMachine {
     }
 
     public boolean buy (Product product) {
-        int productCount = products.get(product) == null ? 0 : products.get(product);
+        int productCount = products.get(product);
         if (productCount == 0) {
             return false;
         }
